@@ -1,0 +1,35 @@
+<a href="#add">Back to Home</a>
+<form>
+  <label for="filter">Filter by Power</label>
+  <select name="filter" ng-model="sortBy" ng-options="power for power in powers" ng-change="getPowerList()" >
+    <option>All</option>
+  </select>
+  <button type="submit">Sort</button>
+
+
+
+</form>
+<table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>Alias</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>City</th>
+              <th>Power</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="heroList" ng-repeat="hero in heroes | orderBy: sortBy">
+              <td id="hero" name="alias">{{hero.alias}}</td>
+              <td id="hero" name="first_name">
+                {{hero.first_name}}
+              </td></td>
+              <td id="hero" name="last_name">{{hero.last_name}}</td>
+              <td id="hero" name="city">{{hero.city}}</td>
+              <td id="hero" name="superpower">{{hero.power_name}}</td>
+              <td><button class="delete" ng-click="deleteHero(hero._id)">Delete</button></td>
+            </tr>
+            </tbody>
+          </table>

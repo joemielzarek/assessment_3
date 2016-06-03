@@ -1,0 +1,22 @@
+<a href="#show">Heros</a>
+
+<h2>Add a Hero</h2>
+
+<form id="heroForm" class="form-group">
+  <label for="alias">Alias:</label>
+  <input type="text" id="currentHeroAlias" name="alias" ng-model="currentHero.alias" />
+
+  <label for="first_name">First Name:</label>
+  <input type="text" id="currentHeroFirstName" name="first_name" ng-model="currentHero.first_name" />
+
+  <label for="last_name">Last Name:</label>
+  <input type="text" id="currentHeroLastName" name="last_name" ng-model="currentHero.last_name" />
+
+  <label for="city">City:</label>
+  <input type="text" id="currentHeroCity" name="city" ng-model="currentHero.city" />
+
+  <label for="power">Power:</label>
+  <select ng-model="selectedPower" ng-options="power for power in powers"></select>
+
+  <button ng-click="submitCurrentHero()">Save Hero</button>
+</form>
